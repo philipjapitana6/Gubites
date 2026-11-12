@@ -1,3 +1,4 @@
+<img width="676" height="369" alt="gubitesicon" src="https://github.com/user-attachments/assets/76930a91-c963-47f1-b500-5909278a84e9" />
 <p align="center">
   <img src="path-to-your-banner.png" alt="Gubites Banner" width="100%">
 </p>
