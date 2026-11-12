@@ -1,16 +1,20 @@
-<img width="676" height="369" alt="gubitesicon" src="https://github.com/user-attachments/assets/aff83230-21f3-49b9-8a46-4c987d26844a" />
-<div align="center">
-  <img src="gubitesicon.png" alt="Gubites Official Logo" width="200">
-  
-  <h1>🍔 Gubites (Gubat Bites)</h1>
-  <p><strong>Fast, reliable, and fresh online food delivery straight to your doorstep in Gubat.</strong></p>
+<table align="center">
+  <tr>
+    <td align="center" style="border: none;">
+      <img src="https://github.com/user-attachments/assets/aff83230-21f3-49b9-8a46-4c987d26844a" alt="Gubites Official Logo" width="90">
+    </td>
+    <td align="left" style="border: none;">
+      <h1>Gubites (Gubat Bites)</h1>
+      <p><strong>Fast, reliable, and fresh online food delivery straight to your doorstep in Gubat.</strong></p>
+    </td>
+  </tr>
+</table>
 
-  <p>
-    <img src="https://img.shields.io/badge/Gubites-Food%20Delivery-1b4332?style=for-the-badge&logo=appstore&logoColor=white" alt="Gubites">
-    <img src="https://img.shields.io/badge/Android-7.0%2B-green?style=for-the-badge" alt="Android">
-    <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status">
-  </p>
-</div>
+<p align="center">
+  <img src="https://img.shields.io/badge/Gubites-Food%20Delivery-1b4332?style=for-the-badge&logo=appstore&logoColor=white" alt="Gubites">
+  <img src="https://img.shields.io/badge/Android-7.0%2B-green?style=for-the-badge" alt="Android">
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status">
+</p>
 
 ---
 
