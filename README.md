@@ -1,17 +1,15 @@
-<img width="676" height="369" alt="gubitesicon" src="https://github.com/user-attachments/assets/76930a91-c963-47f1-b500-5909278a84e9" />
-<p align="center">
-  <img src="path-to-your-banner.png" alt="Gubites Banner" width="100%">
-</p>
+<div align="center">
+  <img src="gubitesicon.png" alt="Gubites Official Logo" width="200">
+  
+  <h1>🍔 Gubites (Gubat Bites)</h1>
+  <p><strong>Fast, reliable, and fresh online food delivery straight to your doorstep in Gubat.</strong></p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Gubites-Food%20Delivery-1b4332?style=for-the-badge&logo=appstore&logoColor=white" alt="Gubites">
-  <img src="https://img.shields.io/badge/Android-7.0%2B-green?style=for-the-badge" alt="Android">
-  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status">
-</p>
-
-# 🍔 Gubites (Gubat Bites)
-
-Welcome to the official repository for **Gubites**—a fast, reliable, and fresh online food delivery platform designed to bring your favorite local meals straight to your doorstep.
+  <p>
+    <img src="https://img.shields.io/badge/Gubites-Food%20Delivery-1b4332?style=for-the-badge&logo=appstore&logoColor=white" alt="Gubites">
+    <img src="https://img.shields.io/badge/Android-7.0%2B-green?style=for-the-badge" alt="Android">
+    <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status">
+  </p>
+</div>
 
 ---
 
@@ -38,7 +36,8 @@ You can download the latest compiled Android application package (APK) directly 
 ---
 
 ## 🌐 Official Landing Page
-Visit our web promotion page hosted via GitHub Pages to learn more about the app and view updates!
+Visit our web promotion page hosted via GitHub Pages to learn more about the app and view updates:  
+👉 **[Visit Gubites Official Website](https://philipjapitana6.github.io/Gubites/)**
 
 ---
 
