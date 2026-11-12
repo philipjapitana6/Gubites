@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gubites - Fast Online Food Delivery</title>
+  <style>
+    :root {
+      --primary: #ea580c;
+      --primary-hover: #c2410c;
+      --bg: #fffaf5;
+      --card-bg: #ffffff;
+      --text: #1c1917;
+      --subtext: #57534e;
+      --border: #fed7aa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    .hero {
+      text-align: center;
+      padding: 64px 20px 48px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .badge {
+      display: inline-block;
+      background: #ffedd5;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 6px 14px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      margin: 0 0 14px;
+      letter-spacing: -1px;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--subtext);
+      margin: 0 0 32px;
+    }
+    .btn {
+      display: inline-block;
+      background-color: var(--primary);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 16px 36px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(234, 88, 12, 0.25);
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+    .meta {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--subtext);
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 20px auto 48px;
+      padding: 0 20px;
+    }
+    .feature-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .feature-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+    }
+    .feature-card p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--subtext);
+    }
+    .install-box {
+      max-width: 680px;
+      margin: 0 auto 60px;
+      padding: 28px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+    .install-box h2 {
+      margin-top: 0;
+      font-size: 1.3rem;
+      color: var(--primary);
+    }
+    .install-box ol {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--subtext);
+    }
+    .install-box li { margin-bottom: 8px; }
+    .install-box b { color: var(--text); }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.85rem;
+      color: var(--subtext);
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <span class="badge">Official Android App</span>
+    <h1>Craving Something Good? Get Gubites.</h1>
+    <p>Browse local restaurants, order your favorite meals in seconds, and enjoy fast delivery right to your doorstep.</p>
+    
+    <!-- Replace this link with your direct .apk release link once uploaded -->
+    <a href="https://github.com/philipjapitana6/Gubites/releases" class="btn">Download Gubites APK</a>
+    <div class="meta">Version 1.0.0 • Android 7.0+ • Free Download</div>
+  </section>
+
+  <section class="features">
+    <div class="feature-card">
+      <h3>Local Favorites</h3>
+      <p>Explore menus from the best local restaurants and food spots around you.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Easy Ordering</h3>
+      <p>Customize your meal, add to cart, and check out in just a few taps.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Fast Delivery</h3>
+      <p>Track your order from the kitchen straight to your front door.</p>
+    </div>
+  </section>
+
+  <section class="install-box">
+    <h2>How to Install Gubites on Android</h2>
+    <ol>
+      <li>Tap the <b>Download Gubites APK</b> button above.</li>
+      <li>Open your phone's <b>Downloads</b> folder or tap the completed download notification.</li>
+      <li>If Android shows a security prompt, tap <b>Settings</b> and turn on <b>Allow from this source</b>, then tap <b>Install</b>.</li>
+    </ol>
+  </section>
+
+  <footer>
+    &copy; 2026 Gubites. All rights reserved.
+  </footer>
+
+</body>
+</html>
