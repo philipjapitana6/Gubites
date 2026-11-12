@@ -1,9 +1,45 @@
-# Gubites
-Official website and Android APK download for Gubites online food delivery.
 <p align="center">
   <img src="path-to-your-banner.png" alt="Gubites Banner" width="100%">
 </p>
+
 <p align="center">
   <img src="https://img.shields.io/badge/Gubites-Food%20Delivery-1b4332?style=for-the-badge&logo=appstore&logoColor=white" alt="Gubites">
   <img src="https://img.shields.io/badge/Android-7.0%2B-green?style=for-the-badge" alt="Android">
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status">
 </p>
+
+# 🍔 Gubites (Gubat Bites)
+
+Welcome to the official repository for **Gubites**—a fast, reliable, and fresh online food delivery platform designed to bring your favorite local meals straight to your doorstep.
+
+---
+
+## ✨ Key Features
+
+* **📍 Local Favorites:** Explore menus from the best local restaurants and food spots around you.
+* **🛒 Easy Ordering:** Customize your meals, manage your cart, and check out in just a few taps.
+* **🚀 Fast Delivery:** Track your food from the kitchen all the way to your front door.
+* **🌿 Fresh Branding:** Styled with a clean, forest-green user interface tailored for a smooth food browsing experience.
+
+---
+
+## 📥 Download & Install
+
+You can download the latest compiled Android application package (APK) directly from our repository:
+
+👉 **[Download Gubites v1.0.0 APK Here](https://github.com/philipjapitana6/Gubites/releases/latest)**
+
+### How to Install on Android:
+1. Click the download link above to grab the latest `.apk` file.
+2. Open your phone's **Downloads** folder and tap the downloaded file.
+3. If prompted by Android for security, tap **Settings**, enable **Allow from this source**, and proceed with installation.
+
+---
+
+## 🌐 Official Landing Page
+Visit our web promotion page hosted via GitHub Pages to learn more about the app and view updates!
+
+---
+
+## 📄 License
+This project is open-source and available under the [MIT License](LICENSE).
