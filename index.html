@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gubites (Gubat Bites) - Fast Online Food Delivery</title>
+  <meta name="description" content="Download the official Gubites Android app. Browse local Gubat restaurants, order your favorite meals in seconds, and enjoy fast doorstep delivery.">
   <style>
     :root {
       --primary: #1b4332;
+      --primary-light: #2d6a4f;
       --primary-hover: #081c15;
       --accent-bg: #d8f3dc;
       --accent-text: #1b4332;
@@ -16,20 +18,75 @@
       --subtext: #4a6356;
       --border: #b7e4c7;
     }
-    * { box-sizing: border-box; }
+
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background-color: var(--bg);
       color: var(--text);
       margin: 0;
       padding: 0;
       line-height: 1.6;
     }
-    .hero {
-      text-align: center;
-      padding: 64px 20px 48px;
-      max-width: 720px;
+
+    /* Sticky Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(244, 249, 246, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-container {
+      max-width: 1040px;
       margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--subtext);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-btn {
+      background: var(--primary);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.9rem !important;
+    }
+    .nav-btn:hover { background: var(--primary-hover); }
+
+    /* Hero Section */
+    .hero {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 64px 20px 48px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
     }
     .badge {
       display: inline-block;
@@ -44,23 +101,33 @@
       margin-bottom: 16px;
     }
     .hero h1 {
-      font-size: 2.8rem;
-      margin: 0 0 14px;
+      font-size: 3rem;
+      line-height: 1.15;
+      margin: 0 0 18px;
       letter-spacing: -1px;
+      color: var(--text);
     }
     .hero p {
-      font-size: 1.15rem;
+      font-size: 1.12rem;
       color: var(--subtext);
-      margin: 0 0 32px;
+      margin: 0 0 28px;
+    }
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
     }
     .btn {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       background-color: var(--primary);
       color: #ffffff;
       text-decoration: none;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 700;
-      padding: 16px 36px;
+      padding: 16px 30px;
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(27, 67, 50, 0.25);
       transition: background 0.2s, transform 0.15s;
@@ -69,102 +136,399 @@
       background-color: var(--primary-hover);
       transform: translateY(-2px);
     }
+    .btn-secondary {
+      background: var(--card-bg);
+      color: var(--primary);
+      border: 1.5px solid var(--border);
+      box-shadow: none;
+    }
+    .btn-secondary:hover {
+      background: var(--accent-bg);
+      transform: translateY(-2px);
+    }
     .meta {
-      margin-top: 12px;
+      margin-top: 14px;
       font-size: 0.85rem;
       color: var(--subtext);
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
     }
+
+    /* CSS Phone Mockup Preview */
+    .phone-frame {
+      width: 280px;
+      margin: 0 auto;
+      background: #102a1d;
+      border-radius: 36px;
+      padding: 12px;
+      box-shadow: 0 24px 48px rgba(16, 42, 29, 0.22);
+    }
+    .phone-screen {
+      background: var(--bg);
+      border-radius: 26px;
+      overflow: hidden;
+      padding: 18px;
+    }
+    .app-header {
+      background: var(--primary);
+      color: #fff;
+      padding: 16px;
+      border-radius: 16px;
+      margin-bottom: 14px;
+    }
+    .app-header small { opacity: 0.8; font-size: 0.75rem; display: block; }
+    .app-header strong { font-size: 1.1rem; }
+    .mock-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .mock-card h4 { margin: 0 0 2px; font-size: 0.9rem; color: var(--text); }
+    .mock-card span { font-size: 0.78rem; color: var(--subtext); }
+    .mock-tag {
+      background: var(--accent-bg);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+
+    /* Section Containers */
+    .section {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .section-title h2 {
+      font-size: 2rem;
+      margin: 0 0 8px;
+      color: var(--primary);
+    }
+    .section-title p {
+      margin: 0;
+      color: var(--subtext);
+    }
+
+    /* Features Grid */
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 20px;
-      max-width: 900px;
-      margin: 20px auto 48px;
-      padding: 0 20px;
     }
     .feature-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px;
+      border-radius: 16px;
+      padding: 26px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(27, 67, 50, 0.08);
+    }
+    .icon-box {
+      width: 44px;
+      height: 44px;
+      background: var(--accent-bg);
+      color: var(--primary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 14px;
     }
     .feature-card h3 {
       margin: 0 0 8px;
-      font-size: 1.1rem;
+      font-size: 1.12rem;
       color: var(--primary);
     }
     .feature-card p {
       margin: 0;
-      font-size: 0.92rem;
+      font-size: 0.93rem;
       color: var(--subtext);
     }
-    .install-box {
-      max-width: 680px;
-      margin: 0 auto 60px;
+
+    /* How It Works */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .step-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      position: relative;
+    }
+    .step-num {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.85rem;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      text-align: center;
+      border-radius: 50%;
+      margin-bottom: 12px;
+    }
+    .step-card h3 { margin: 0 0 6px; font-size: 1.08rem; }
+    .step-card p { margin: 0; font-size: 0.92rem; color: var(--subtext); }
+
+    /* Install & FAQ Split */
+    .guide-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .box {
       padding: 28px;
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 16px;
     }
-    .install-box h2 {
+    .box h2 {
       margin-top: 0;
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       color: var(--primary);
     }
-    .install-box ol {
+    .box ol {
       margin: 0;
       padding-left: 20px;
       color: var(--subtext);
     }
-    .install-box li { margin-bottom: 8px; }
-    .install-box b { color: var(--text); }
+    .box li { margin-bottom: 12px; }
+    .box b { color: var(--text); }
+
+    details {
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+    }
+    details:last-child { border-bottom: none; }
+    summary {
+      font-weight: 700;
+      color: var(--text);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+    details[open] summary::after { content: "−"; }
+    details p {
+      margin: 10px 0 0;
+      font-size: 0.92rem;
+      color: var(--subtext);
+    }
+
+    /* Footer */
     footer {
       text-align: center;
-      padding: 24px;
-      font-size: 0.85rem;
+      padding: 32px 20px;
+      font-size: 0.88rem;
       color: var(--subtext);
       border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 780px) {
+      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 40px; }
+      .hero h1 { font-size: 2.3rem; }
+      .cta-group, .meta { justify-content: center; }
+      .guide-grid { grid-template-columns: 1fr; }
+      .nav-links a:not(.nav-btn) { display: none; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Top Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">🌿 Gubites</a>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#install">Install Guide</a>
+        <a href="https://github.com/philipjapitana6/Gubites/releases/download/v1.0.0/gubites.apk" class="nav-btn">Get App</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
   <section class="hero">
-    <span class="badge">Gubat Bites • Official Android App</span>
-    <h1>Craving Something Good? Get Gubites.</h1>
-    <p>Browse local restaurants, order your favorite meals in seconds, and enjoy fast delivery right to your doorstep.</p>
-    
-    <!-- Replace this link with your direct .apk release link once uploaded -->
-    <a href="https://github.com/philipjapitana6/Gubites/releases" class="btn">Download Gubites APK</a>
-    <div class="meta">Version 1.0.0 • Android 7.0+ • Free Download</div>
+    <div>
+      <span class="badge">Gubat Bites • Official Android App</span>
+      <h1>Craving Something Good? Get Gubites.</h1>
+      <p>Browse local restaurants, order your favorite meals in seconds, and enjoy fast, reliable delivery right to your doorstep.</p>
+      
+      <div class="cta-group">
+        <!-- Direct link to your uploaded release binary -->
+        <a href="https://github.com/philipjapitana6/Gubites/releases/download/v1.0.0/gubites.apk" class="btn">
+          <span>📥</span> Download Gubites APK
+        </a>
+        <a href="#install" class="btn btn-secondary">How to Install</a>
+      </div>
+
+      <div class="meta">
+        <span>✅ Version 1.0.0 (Latest)</span>
+        <span>📱 Android 7.0+</span>
+        <span>🔒 Verified Release</span>
+      </div>
+    </div>
+
+    <!-- Interactive App UI Preview -->
+    <div class="phone-frame" aria-hidden="true">
+      <div class="phone-screen">
+        <div class="app-header">
+          <small>Delivering to</small>
+          <strong>📍 Gubat, Sorsogon</strong>
+        </div>
+        <div class="mock-card">
+          <div>
+            <h4>Gubat Grill & Bites</h4>
+            <span>Local Favorites • 15–25 mins</span>
+          </div>
+          <span class="mock-tag">Open</span>
+        </div>
+        <div class="mock-card">
+          <div>
+            <h4>Bicol Express Bowl</h4>
+            <span>₱145 • Bestseller</span>
+          </div>
+          <span class="mock-tag">+ Add</span>
+        </div>
+        <div class="mock-card">
+          <div>
+            <h4>Fresh Buko Shake</h4>
+            <span>₱65 • Cold Drinks</span>
+          </div>
+          <span class="mock-tag">+ Add</span>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="features">
-    <div class="feature-card">
-      <h3>Local Favorites</h3>
-      <p>Explore menus from the best local restaurants and food spots around you.</p>
+  <!-- Features Section -->
+  <section id="features" class="section">
+    <div class="section-title">
+      <h2>Why Order with Gubites?</h2>
+      <p>Built specifically to connect local food lovers with neighborhood kitchens.</p>
     </div>
-    <div class="feature-card">
-      <h3>Easy Ordering</h3>
-      <p>Customize your meal, add to cart, and check out in just a few taps.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Fast Delivery</h3>
-      <p>Track your order from the kitchen straight to your front door.</p>
+    <div class="features">
+      <div class="feature-card">
+        <div class="icon-box">🍽️</div>
+        <h3>Local Favorites</h3>
+        <p>Explore curated menus from the best local restaurants, eateries, and food spots around town.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon-box">⚡</div>
+        <h3>Easy Ordering</h3>
+        <p>Customize your meal, add notes for the kitchen, and check out in just a few simple taps.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon-box">🛵</div>
+        <h3>Fast Delivery</h3>
+        <p>Follow your order status in real time from kitchen preparation straight to your front door.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon-box">💳</div>
+        <h3>Flexible Payment</h3>
+        <p>Pay conveniently with Cash on Delivery (COD) or supported local digital payment options.</p>
+      </div>
     </div>
   </section>
 
-  <section class="install-box">
-    <h2>How to Install Gubites on Android</h2>
-    <ol>
-      <li>Tap the <b>Download Gubites APK</b> button above.</li>
-      <li>Open your phone's <b>Downloads</b> folder or tap the completed download notification.</li>
-      <li>If Android shows a security prompt, tap <b>Settings</b> and turn on <b>Allow from this source</b>, then tap <b>Install</b>.</li>
-    </ol>
+  <!-- How It Works -->
+  <section id="how-it-works" class="section">
+    <div class="section-title">
+      <h2>From Craving to Doorstep in 3 Steps</h2>
+      <p>Getting your next meal takes less than a minute.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-num">1</span>
+        <h3>Pick Your Spot</h3>
+        <p>Open Gubites, set your delivery address, and browse nearby restaurants open right now.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-num">2</span>
+        <h3>Build Your Cart</h3>
+        <p>Select your favorite dishes, choose add-ons or drinks, and confirm your order summary.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-num">3</span>
+        <h3>Receive & Enjoy</h3>
+        <p>Our local rider picks up your freshly prepared meal and brings it straight to you.</p>
+      </div>
+    </div>
   </section>
 
+  <!-- Installation & FAQ Section -->
+  <section id="install" class="section">
+    <div class="guide-grid">
+      <div class="box">
+        <h2>How to Install Gubites on Android</h2>
+        <ol>
+          <li>Tap the <b>Download Gubites APK</b> button at the top of this page.</li>
+          <li>Open your phone's <b>Downloads</b> folder or tap the completed download notification in your status bar.</li>
+          <li>If Android shows a security prompt, tap <b>Settings</b> and turn on <b>Allow from this source</b>.</li>
+          <li>Tap <b>Install</b>, wait a few seconds, and open <b>Gubites</b> from your home screen!</li>
+        </ol>
+      </div>
+
+      <div class="box">
+        <h2>Frequently Asked Questions</h2>
+        <details open>
+          <summary>Why does Android ask for permission to install?</summary>
+          <p>Because Gubites is downloaded directly from our official website rather than the Google Play Store, Android asks you to confirm that you trust the browser or file manager installing the APK.</p>
+        </details>
+        <details>
+          <summary>Is the Gubites APK safe to install?</summary>
+          <p>Yes. Every release is compiled directly from our official repository and hosted securely on GitHub Releases.</p>
+        </details>
+        <details>
+          <summary>How do I get future app updates?</summary>
+          <p>Whenever a new version is released, simply revisit this page and download the updated APK to install right over your existing app.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    &copy; 2026 Gubites (Gubat Bites). All rights reserved.
+    <p>&copy; 2026 Gubites (Gubat Bites). All rights reserved.</p>
+    <p>
+      <a href="https://github.com/philipjapitana6/Gubites">GitHub Repository</a> • 
+      <a href="https://github.com/philipjapitana6/Gubites/releases">All Releases</a>
+    </p>
   </footer>
 
 </body>
