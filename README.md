@@ -1,3 +1,4 @@
+<img width="676" height="369" alt="gubitesicon" src="https://github.com/user-attachments/assets/aff83230-21f3-49b9-8a46-4c987d26844a" />
 <div align="center">
   <img src="gubitesicon.png" alt="Gubites Official Logo" width="200">
   
